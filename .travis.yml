@@ -22,12 +22,10 @@ install:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-  - docker tag udacity-reverseproxy jarb29/udacity-reverseproxy
-  - docker tag udacity-restapi-user jarb29/udacity-restapi-user
-  - docker tag udacity-restapi-feed jarb29/udacity-restapi-feed 
-  - docker tag udacity-frontend:prod jarb29/udacity-frontend
+  - docker tag api-feed apean1/api-feed:v1
+  - docker tag api-user apean1/api-user:v1
+  - docker tag udacity-frontend apean1/udacity-frontend:v1
 
-  - docker push jarb29/udacity-reverseproxy
-  - docker push jarb29/udacity-restapi-user
-  - docker push jarb29/udacity-restapi-feed 
-  - docker push jarb29/udacity-frontend
+  - docker push apean1/api-feed:v1
+  - docker push apean1/api-user:v1
+  - docker push apean1/udacity-frontend:v1
